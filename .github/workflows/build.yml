@@ -1,0 +1,159 @@
+name: Flutter Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  # 允许手动触发构建
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 设置 Java 环境
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # 3. 设置 Flutter 环境
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.0'
+          channel: 'stable'
+          cache: true
+
+      # 4. 获取依赖
+      - name: Get dependencies
+        run: flutter pub get
+
+      # 5. 代码分析（可选）
+      - name: Analyze code
+        run: flutter analyze
+        continue-on-error: true
+
+      # 6. 构建 APK
+      - name: Build APK
+        run: flutter build apk --release
+
+      # 7. 上传 APK 文件
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: retro-radio-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30
+
+  build-android-appbundle:
+    name: Build Android App Bundle
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.0'
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build App Bundle
+        run: flutter build appbundle --release
+
+      - name: Upload App Bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: retro-radio-aab
+          path: build/app/outputs/bundle/release/app-release.aab
+          retention-days: 30
+
+  build-ios:
+    name: Build iOS (No Signing)
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.0'
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      # 构建 iOS 无签名版本（仅用于测试）
+      - name: Build iOS (No Codesign)
+        run: flutter build ios --release --no-codesign
+
+      # 打包成 zip 方便下载
+      - name: Create iOS Archive
+        run: |
+          cd build/ios/iphoneos
+          zip -r ../../../Runner.app.zip Runner.app
+
+      - name: Upload iOS App
+        uses: actions/upload-artifact@v4
+        with:
+          name: retro-radio-ios
+          path: Runner.app.zip
+          retention-days: 30
+
+  build-ios-simulator:
+    name: Build iOS Simulator
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.0'
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      # 构建 iOS 模拟器版本
+      - name: Build iOS Simulator
+        run: flutter build ios --simulator --debug
+
+      # 打包
+      - name: Create Simulator Archive
+        run: |
+          cd build/ios/iphonesimulator
+          zip -r ../../../Runner_Simulator.app.zip Runner.app
+
+      - name: Upload iOS Simulator App
+        uses: actions/upload-artifact@v4
+        with:
+          name: retro-radio-ios-simulator
+          path: Runner_Simulator.app.zip
+          retention-days: 30

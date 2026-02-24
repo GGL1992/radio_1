@@ -1,0 +1,73 @@
+name: retro_radio
+description: 复古拟物风格收音机应用 - 收听全国广播电台
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # 状态管理
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation: ^2.3.3
+  
+  # 音频播放
+  just_audio: ^0.9.36
+  audio_session: ^0.1.18
+  just_audio_background: ^0.0.1-beta.11
+  
+  # 本地存储
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.1
+  shared_preferences: ^2.2.2
+  
+  # 网络请求
+  dio: ^5.4.0
+  connectivity_plus: ^5.0.2
+  
+  # 下载管理
+  flutter_downloader: ^1.11.4
+  permission_handler: ^11.1.0
+  
+  # UI 组件
+  cupertino_icons: ^1.0.6
+  flutter_svg: ^2.0.9
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
+  flutter_animate: ^4.3.0
+  
+  # 分享功能
+  share_plus: ^7.2.1
+  
+  # 工具类
+  intl: ^0.18.1
+  url_launcher: ^6.2.2
+  logger: ^2.0.2
+  uuid: ^4.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  build_runner: ^2.4.7
+  hive_generator: ^2.0.1
+  riverpod_generator: ^2.3.9
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/textures/
+    - assets/images/icons/
+    - assets/data/
+  
+  # 如需使用自定义字体，请将字体文件放入 assets/fonts/ 目录
+  # 并取消下方注释：
+  # fonts:
+  #   - family: RetroRadio
+  #     fonts:
+  #       - asset: assets/fonts/retro_radio.ttf
