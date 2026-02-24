@@ -1,11 +1,11 @@
 import 'package:hive/hive.dart';
-import '../models/radio_station.dart';
-import '../models/program.dart';
-import '../models/host.dart';
-import '../models/favorite.dart';
-import '../models/play_history.dart';
-import '../models/download_task.dart';
-import '../models/app_settings.dart';
+import '../../models/radio_station.dart';
+import '../../models/program.dart';
+import '../../models/host.dart';
+import '../../models/favorite.dart';
+import '../../models/play_history.dart';
+import '../../models/download_task.dart';
+import '../../models/app_settings.dart';
 
 class HiveService {
   static const String stationsBox = 'stations';

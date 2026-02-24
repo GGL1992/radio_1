@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
 import '../../data/models/radio_station.dart';
@@ -204,3 +205,8 @@ class AudioPlayerService {
     _stateController.close();
   }
 }
+
+// Riverpod Provider
+final audioPlayerServiceProvider = Provider<AudioPlayerService>((ref) {
+  return AudioPlayerService();
+});

@@ -5,6 +5,9 @@ import '../../data/repositories/repositories.dart';
 import '../../data/datasources/remote/built_in_stations.dart';
 import '../../router/app_router.dart';
 import '../../services/audio/audio_player_service.dart';
+import '../category/category_screen.dart';
+import '../favorites/favorites_screen.dart';
+import '../settings/settings_screen.dart';
 
 // 电台列表提供者
 final stationListProvider = FutureProvider<List<RadioStation>>((ref) async {

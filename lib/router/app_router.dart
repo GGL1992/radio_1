@@ -19,47 +19,47 @@ class AppRouter {
   static const String settings = '/settings';
   static const String stationDetail = '/station';
 
-  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
-    switch (settings.name) {
+  static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
+    switch (routeSettings.name) {
       case home:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
-          settings: settings,
+          settings: routeSettings,
         );
       case player:
         return MaterialPageRoute(
           builder: (_) => const PlayerScreen(),
-          settings: settings,
+          settings: routeSettings,
         );
       case search:
         return MaterialPageRoute(
           builder: (_) => const SearchScreen(),
-          settings: settings,
+          settings: routeSettings,
         );
       case category:
         return MaterialPageRoute(
           builder: (_) => const CategoryScreen(),
-          settings: settings,
+          settings: routeSettings,
         );
       case favorites:
         return MaterialPageRoute(
           builder: (_) => const FavoritesScreen(),
-          settings: settings,
+          settings: routeSettings,
         );
       case downloads:
         return MaterialPageRoute(
           builder: (_) => const DownloadsScreen(),
-          settings: settings,
+          settings: routeSettings,
         );
       case history:
         return MaterialPageRoute(
           builder: (_) => const HistoryScreen(),
-          settings: settings,
+          settings: routeSettings,
         );
       case settings:
         return MaterialPageRoute(
           builder: (_) => const SettingsScreen(),
-          settings: settings,
+          settings: routeSettings,
         );
       default:
         return MaterialPageRoute(
