@@ -4,7 +4,7 @@ import '../models/favorite.dart';
 import '../models/play_history.dart';
 import '../models/download_task.dart';
 import '../models/app_settings.dart';
-import 'hive_service.dart';
+import '../datasources/local/hive_service.dart';
 
 // Hive 服务提供者
 final hiveServiceProvider = Provider<HiveService>((ref) {

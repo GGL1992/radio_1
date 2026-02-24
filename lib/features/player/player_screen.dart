@@ -326,7 +326,7 @@ class _PlayerScreenState extends ConsumerState<PlayerScreen> {
                     Text(
                       '${station.category} · ${station.region}',
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.6),
+                        color: Colors.white.withOpacity(0.6),
                         fontSize: 12,
                       ),
                     ),
@@ -334,7 +334,7 @@ class _PlayerScreenState extends ConsumerState<PlayerScreen> {
                     Text(
                       station.description ?? '',
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.5),
+                        color: Colors.white.withOpacity(0.5),
                         fontSize: 12,
                       ),
                       maxLines: 2,
@@ -350,9 +350,9 @@ class _PlayerScreenState extends ConsumerState<PlayerScreen> {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: Colors.red.withValues(alpha: 0.1),
+                color: Colors.red.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(4),
-                border: Border.all(color: Colors.red.withValues(alpha: 0.3)),
+                border: Border.all(color: Colors.red.withOpacity(0.3)),
               ),
               child: Row(
                 children: [

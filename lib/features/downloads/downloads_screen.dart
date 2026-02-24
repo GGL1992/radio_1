@@ -63,13 +63,13 @@ class DownloadsScreen extends ConsumerWidget {
                         Icon(
                           Icons.download_outlined,
                           size: 64,
-                          color: Colors.white.withValues(alpha: 0.3),
+                          color: Colors.white.withOpacity(0.3),
                         ),
                         const SizedBox(height: 16),
                         Text(
                           '暂无下载',
                           style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.5),
+                            color: Colors.white.withOpacity(0.5),
                             fontSize: 16,
                           ),
                         ),
@@ -77,7 +77,7 @@ class DownloadsScreen extends ConsumerWidget {
                         Text(
                           '您可以下载节目离线收听',
                           style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.3),
+                            color: Colors.white.withOpacity(0.3),
                             fontSize: 14,
                           ),
                         ),
@@ -127,7 +127,7 @@ class _DownloadItem extends StatelessWidget {
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: _getStatusColor().withValues(alpha: 0.2),
+                  color: _getStatusColor().withOpacity(0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(

@@ -37,9 +37,8 @@ class FrequencyDial extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.5),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+            color: Colors.black.withOpacity(0.5),
+                      blurRadius: 10,            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -78,7 +77,7 @@ class _DialPainter extends CustomPainter {
 
     // 绘制刻度背景线
     final linePaint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.3)
+      ..color = Colors.white.withOpacity(0.3)
       ..strokeWidth = 1;
 
     // 绘制频率刻度
@@ -108,7 +107,7 @@ class _DialPainter extends CustomPainter {
         textPainter.text = TextSpan(
           text: freq.toStringAsFixed(0),
           style: TextStyle(
-            color: Colors.white.withValues(alpha: 0.7),
+            color: Colors.white.withOpacity(0.7),
             fontSize: 12,
             fontWeight: FontWeight.w500,
           ),
@@ -128,9 +127,8 @@ class _DialPainter extends CustomPainter {
     // 指针发光效果
     if (isPlaying) {
       final glowPaint = Paint()
-        ..color = const Color(0xFF00FF00).withValues(alpha: 0.3)
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
-      canvas.drawRect(
+        ..color = const Color(0xFF00FF00).withOpacity(0.3)
+              ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);      canvas.drawRect(
         Rect.fromLTWH(pointerX - 15, 0, 30, size.height),
         glowPaint,
       );

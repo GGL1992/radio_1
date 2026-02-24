@@ -130,7 +130,7 @@ class _VUMeterPainter extends CustomPainter {
       final paint = Paint()
         ..color = i < activeSegments
             ? color
-            : color.withValues(alpha: 0.2);
+            : color.withOpacity(0.2);
 
       final rect = RRect.fromRectAndRadius(
         Rect.fromLTWH(x + 1, y, segmentWidth - 2, segmentHeight),

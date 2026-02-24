@@ -72,7 +72,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         color: const Color(0xFF1A1A2E),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
+            color: Colors.black.withOpacity(0.3),
             blurRadius: 10,
             offset: const Offset(0, -2),
           ),
@@ -250,7 +250,7 @@ class _HomePage extends ConsumerWidget {
         decoration: BoxDecoration(
           color: const Color(0xFF2A2A4A),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: const Color(0xFFB8860B).withValues(alpha: 0.3)),
+          border: Border.all(color: const Color(0xFFB8860B).withOpacity(0.3)),
         ),
         child: Row(
           children: [
@@ -306,11 +306,11 @@ class _StationCard extends StatelessWidget {
           color: const Color(0xFF2A2A4A),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: const Color(0xFFB8860B).withValues(alpha: 0.2),
+            color: const Color(0xFFB8860B).withOpacity(0.2),
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
+              color: Colors.black.withOpacity(0.2),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -348,7 +348,7 @@ class _StationCard extends StatelessWidget {
                   Text(
                     station.frequency,
                     style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.6),
+                      color: Colors.white.withOpacity(0.6),
                       fontSize: 14,
                     ),
                   ),
@@ -356,7 +356,7 @@ class _StationCard extends StatelessWidget {
                   Text(
                     '${station.category} · ${station.region}',
                     style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.4),
+                      color: Colors.white.withOpacity(0.4),
                       fontSize: 12,
                     ),
                   ),

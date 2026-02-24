@@ -68,13 +68,13 @@ class HistoryScreen extends ConsumerWidget {
                         Icon(
                           Icons.history,
                           size: 64,
-                          color: Colors.white.withValues(alpha: 0.3),
+                          color: Colors.white.withOpacity(0.3),
                         ),
                         const SizedBox(height: 16),
                         Text(
                           '暂无播放记录',
                           style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.5),
+                            color: Colors.white.withOpacity(0.5),
                             fontSize: 16,
                           ),
                         ),
@@ -146,7 +146,7 @@ class _HistoryItem extends ConsumerWidget {
                 Text(
                   _formatDateTime(history.playedAt),
                   style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.5),
+                    color: Colors.white.withOpacity(0.5),
                     fontSize: 12,
                   ),
                 ),

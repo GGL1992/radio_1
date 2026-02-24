@@ -75,7 +75,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                           color: const Color(0xFF2A2A4A),
                           borderRadius: BorderRadius.circular(24),
                           border: Border.all(
-                            color: const Color(0xFFB8860B).withValues(alpha: 0.3),
+                            color: const Color(0xFFB8860B).withOpacity(0.3),
                           ),
                         ),
                         child: TextField(
@@ -217,7 +217,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                   Text(
                     station.frequency,
                     style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.6),
+                      color: Colors.white.withOpacity(0.6),
                       fontSize: 14,
                     ),
                   ),

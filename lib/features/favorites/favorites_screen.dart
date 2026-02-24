@@ -66,7 +66,7 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen>
                     Text(
                       '共 ${favorites.length} 项',
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.6),
+                        color: Colors.white.withOpacity(0.6),
                         fontSize: 14,
                       ),
                     ),
@@ -129,13 +129,13 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen>
             Icon(
               Icons.favorite_border,
               size: 64,
-              color: Colors.white.withValues(alpha: 0.3),
+              color: Colors.white.withOpacity(0.3),
             ),
             const SizedBox(height: 16),
             Text(
               '暂无收藏',
               style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.5),
+                color: Colors.white.withOpacity(0.5),
                 fontSize: 16,
               ),
             ),
@@ -203,7 +203,7 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen>
                   Text(
                     '收藏于 ${_formatDate(favorite.createdAt)}',
                     style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.5),
+                      color: Colors.white.withOpacity(0.5),
                       fontSize: 12,
                     ),
                   ),

@@ -1,7 +1,7 @@
 import 'dart:convert';
-import '../models/radio_station.dart';
-import '../models/program.dart';
-import '../models/host.dart';
+import '../../models/radio_station.dart';
+import '../../models/program.dart';
+import '../../models/host.dart';
 
 class BuiltInStations {
   static List<RadioStation> getStations() {

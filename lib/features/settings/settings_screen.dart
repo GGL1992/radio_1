@@ -159,7 +159,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 child: Text(
                   '复古收音机 © 2024',
                   style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.3),
+                    color: Colors.white.withOpacity(0.3),
                     fontSize: 12,
                   ),
                 ),
@@ -178,7 +178,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         Text(
           title,
           style: TextStyle(
-            color: Colors.white.withValues(alpha: 0.6),
+            color: Colors.white.withOpacity(0.6),
             fontSize: 14,
             fontWeight: FontWeight.w500,
           ),
@@ -209,7 +209,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       title: Text(title, style: const TextStyle(color: Colors.white)),
       subtitle: Text(
         subtitle,
-        style: TextStyle(color: Colors.white.withValues(alpha: 0.5)),
+        style: TextStyle(color: Colors.white.withOpacity(0.5)),
       ),
       trailing: Switch(
         value: value,
@@ -230,7 +230,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       title: Text(title, style: const TextStyle(color: Colors.white)),
       subtitle: Text(
         subtitle,
-        style: TextStyle(color: Colors.white.withValues(alpha: 0.5)),
+        style: TextStyle(color: Colors.white.withOpacity(0.5)),
       ),
       trailing: onTap != null
           ? const Icon(Icons.chevron_right, color: Colors.white38)
@@ -277,7 +277,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       title: Text(title, style: const TextStyle(color: Colors.white)),
       subtitle: Text(
         desc,
-        style: TextStyle(color: Colors.white.withValues(alpha: 0.5)),
+        style: TextStyle(color: Colors.white.withOpacity(0.5)),
       ),
       activeColor: const Color(0xFFB8860B),
       onChanged: (value) {

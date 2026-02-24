@@ -133,7 +133,7 @@ class _CategoryScreenState extends ConsumerState<CategoryScreen>
               color: const Color(0xFF2A2A4A),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: const Color(0xFFB8860B).withValues(alpha: 0.2),
+                color: const Color(0xFFB8860B).withOpacity(0.2),
               ),
             ),
             child: Column(
@@ -215,7 +215,7 @@ class _CategoryScreenState extends ConsumerState<CategoryScreen>
                   Text(
                     '${stations.length} 个电台',
                     style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.6),
+                      color: Colors.white.withOpacity(0.6),
                       fontSize: 14,
                     ),
                   ),
@@ -250,7 +250,7 @@ class _CategoryScreenState extends ConsumerState<CategoryScreen>
                     subtitle: Text(
                       station.frequency,
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.6),
+                        color: Colors.white.withOpacity(0.6),
                       ),
                     ),
                     trailing: const Icon(

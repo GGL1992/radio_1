@@ -61,12 +61,12 @@ class _RetroKnobState extends State<RetroKnob> {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.5),
+                  color: Colors.black.withOpacity(0.5),
                   offset: const Offset(2, 2),
                   blurRadius: 4,
                 ),
                 BoxShadow(
-                  color: Colors.white.withValues(alpha: 0.1),
+                  color: Colors.white.withOpacity(0.1),
                   offset: const Offset(-1, -1),
                   blurRadius: 2,
                 ),
@@ -137,9 +137,9 @@ class _KnobPainter extends CustomPainter {
       ..shader = RadialGradient(
         center: Alignment.center,
         colors: [
-          knobColor.withValues(alpha: 0.9),
+          knobColor.withOpacity(0.9),
           knobColor,
-          knobColor.withValues(alpha: 1.2),
+          knobColor.withOpacity(1.0),
         ],
       ).createShader(Rect.fromCircle(center: center, radius: innerRadius));
 
@@ -165,7 +165,7 @@ class _KnobPainter extends CustomPainter {
     canvas.drawLine(center, indicatorEnd, indicatorPaint);
 
     // 绘制刻度点
-    final tickPaint = Paint()..color = Colors.white.withValues(alpha: 0.5);
+    final tickPaint = Paint()..color = Colors.white.withOpacity(0.5);
     for (var i = 0; i <= 10; i++) {
       final tickAngle = (-135 + i * 27) * math.pi / 180;
       final tickStart = radius * 0.9;

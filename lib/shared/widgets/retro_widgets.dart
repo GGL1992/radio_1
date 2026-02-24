@@ -72,12 +72,12 @@ class _GlowingIndicatorState extends State<GlowingIndicator>
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: widget.isOn
-                    ? widget.onColor.withValues(alpha: _animation.value)
+                    ? widget.onColor.withOpacity(_animation.value)
                     : widget.offColor,
                 boxShadow: widget.isOn
                     ? [
                         BoxShadow(
-                          color: widget.onColor.withValues(alpha: 0.8),
+                          color: widget.onColor.withOpacity(0.8),
                           blurRadius: widget.size * 0.5,
                           spreadRadius: widget.size * 0.2,
                         ),
@@ -127,7 +127,7 @@ class FrequencyDisplay extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.5),
+            color: Colors.black.withOpacity(0.5),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -167,7 +167,7 @@ class FrequencyDisplay extends StatelessWidget {
                     shadows: isPlaying
                         ? [
                             Shadow(
-                              color: const Color(0xFF00FF00).withValues(alpha: 0.5),
+                              color: const Color(0xFF00FF00).withOpacity(0.5),
                               blurRadius: 10,
                             ),
                           ]
@@ -191,9 +191,8 @@ class FrequencyDisplay extends StatelessWidget {
             Text(
               stationName!,
               style: TextStyle(
-                color: Colors.white.withValues(alpha: 0.7),
-                fontSize: 14,
-              ),
+                color: Colors.white.withOpacity(0.7),
+                              fontSize: 14,              ),
               textAlign: TextAlign.center,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -257,7 +256,7 @@ class _RetroButtonState extends State<RetroButton> {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.3),
+                  color: Colors.black.withOpacity(0.3),
                   offset: Offset(0, _isPressed ? 1 : 3),
                   blurRadius: _isPressed ? 2 : 4,
                 ),
@@ -267,7 +266,7 @@ class _RetroButtonState extends State<RetroButton> {
               widget.icon,
               color: widget.isActive
                   ? const Color(0xFFB8860B)
-                  : Colors.white.withValues(alpha: 0.8),
+                  : Colors.white.withOpacity(0.8),
               size: widget.size * 0.5,
             ),
           ),
@@ -277,7 +276,7 @@ class _RetroButtonState extends State<RetroButton> {
               widget.label!,
               style: TextStyle(
                 fontSize: 10,
-                color: Colors.white.withValues(alpha: 0.6),
+                color: Colors.white.withOpacity(0.6),
               ),
             ),
           ],
@@ -324,9 +323,8 @@ class WoodenPanel extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.4),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+            color: Colors.black.withOpacity(0.4),
+                      blurRadius: 10,            offset: const Offset(0, 4),
           ),
         ],
       ),
