@@ -13,31 +13,36 @@ import 'data/models/app_settings.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // 初始化 Hive
-  await Hive.initFlutter();
-  
-  // 注册 Hive 适配器
-  Hive.registerAdapter(RadioStationAdapter());
-  Hive.registerAdapter(ProgramAdapter());
-  Hive.registerAdapter(HostAdapter());
-  Hive.registerAdapter(FavoriteAdapter());
-  Hive.registerAdapter(PlayHistoryAdapter());
-  Hive.registerAdapter(DownloadTaskAdapter());
-  Hive.registerAdapter(AppSettingsAdapter());
-  Hive.registerAdapter(FavoriteTypeAdapter());
-  Hive.registerAdapter(DownloadStatusAdapter());
-  
-  // 打开 Hive Box
-  await Hive.openBox<RadioStation>('stations');
-  await Hive.openBox<Program>('programs');
-  await Hive.openBox<Host>('hosts');
-  await Hive.openBox<Favorite>('favorites');
-  await Hive.openBox<PlayHistory>('history');
-  await Hive.openBox<DownloadTask>('downloads');
-  await Hive.openBox<AppSettings>('settings');
-  
-  // 初始化后台音频服务
-  await JustAudioBackground.init();
+  try {
+    // 初始化 Hive
+    await Hive.initFlutter();
+    
+    // 注册 Hive 适配器
+    Hive.registerAdapter(RadioStationAdapter());
+    Hive.registerAdapter(ProgramAdapter());
+    Hive.registerAdapter(HostAdapter());
+    Hive.registerAdapter(FavoriteAdapter());
+    Hive.registerAdapter(PlayHistoryAdapter());
+    Hive.registerAdapter(DownloadTaskAdapter());
+    Hive.registerAdapter(AppSettingsAdapter());
+    Hive.registerAdapter(FavoriteTypeAdapter());
+    Hive.registerAdapter(DownloadStatusAdapter());
+    
+    // 打开 Hive Box
+    await Hive.openBox<RadioStation>('stations');
+    await Hive.openBox<Program>('programs');
+    await Hive.openBox<Host>('hosts');
+    await Hive.openBox<Favorite>('favorites');
+    await Hive.openBox<PlayHistory>('history');
+    await Hive.openBox<DownloadTask>('downloads');
+    await Hive.openBox<AppSettings>('settings');
+    
+    // 初始化后台音频服务
+    await JustAudioBackground.init();
+  } catch (e, stack) {
+    debugPrint('初始化错误: $e');
+    debugPrint('堆栈: $stack');
+  }
   
   runApp(const RetroRadioApp());
 }
